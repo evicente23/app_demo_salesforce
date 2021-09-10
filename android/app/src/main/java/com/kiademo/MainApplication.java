@@ -2,12 +2,18 @@ package com.kiademo;
 
 import android.app.Application;
 import android.content.Context;
+import android.util.Log;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
+import com.salesforce.marketingcloud.MCLogListener;
+import com.salesforce.marketingcloud.MarketingCloudConfig;
+import com.salesforce.marketingcloud.MarketingCloudSdk;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
@@ -43,6 +49,17 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    MarketingCloudSdk.setLogLevel(MCLogListener.VERBOSE);
+    MarketingCloudSdk.setLogListener(new MCLogListener.AndroidLogListener());
+    MarketingCloudSdk.init(this,
+                MarketingCloudConfig.builder()
+                        .setApplicationId("{MC_APP_ID}")
+                        .setAccessToken("{MC_ACCESS_TOKEN}")
+                        .setSenderId("{FCM_SENDER_ID_FOR_MC_APP}")
+                        .setMarketingCloudServerUrl("{MC_APP_SERVER_URL}")
+                        .setAnalyticsEnabled(true)
+                        .build(this),
+                initializationStatus -> Log.e("INIT", initializationStatus.toString()));
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }

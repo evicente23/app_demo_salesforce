@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "915642175672",
+    "firebase_url": "https://mikiaecuador.firebaseio.com",
+    "project_id": "mikiaecuador",
+    "storage_bucket": "mikiaecuador.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915642175672:android:b4b7349735dbda31a3644d",
+        "android_client_info": {
+          "package_name": "com.kiademo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915642175672-k7du5mamp6ilmona25fo8vmlq8biqggl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2tj9ofAo3kEAG3bL5PQcfe0s-6vFiIHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915642175672-k7du5mamp6ilmona25fo8vmlq8biqggl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
