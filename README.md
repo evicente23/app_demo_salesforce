@@ -1,4 +1,12 @@
 # app_demo_salesforce
 
 
-Para compilar poner la firma dentro de android/app
+Google Services JSON
+```
+./android/app/google-services.json
+```
+
+Firma para APK
+```
+./android/app/inpsercom.keystore
+```
