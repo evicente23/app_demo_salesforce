@@ -1,4 +1,4 @@
-package com.kiademo;
+package com.aekiai.com;
 
 import com.facebook.react.ReactActivity;
 
