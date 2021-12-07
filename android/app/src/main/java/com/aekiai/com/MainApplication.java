@@ -13,6 +13,7 @@ import com.facebook.soloader.SoLoader;
 import com.salesforce.marketingcloud.MCLogListener;
 import com.salesforce.marketingcloud.MarketingCloudConfig;
 import com.salesforce.marketingcloud.MarketingCloudSdk;
+import com.salesforce.marketingcloud.notifications.NotificationCustomizationOptions;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -52,14 +53,15 @@ public class MainApplication extends Application implements ReactApplication {
     MarketingCloudSdk.setLogLevel(MCLogListener.VERBOSE);
     MarketingCloudSdk.setLogListener(new MCLogListener.AndroidLogListener());
     MarketingCloudSdk.init(this,
-                MarketingCloudConfig.builder()
-                        .setApplicationId("{MC_APP_ID}")
-                        .setAccessToken("{MC_ACCESS_TOKEN}")
-                        .setSenderId("{FCM_SENDER_ID_FOR_MC_APP}")
-                        .setMarketingCloudServerUrl("{MC_APP_SERVER_URL}")
-                        .setAnalyticsEnabled(true)
-                        .build(this),
-                initializationStatus -> Log.e("INIT", initializationStatus.toString()));
+            MarketingCloudConfig.builder()
+                    .setApplicationId("1e9373ad-5d47-471a-8b1e-8d862f20442a")
+                    .setAccessToken("r7FrKYka9Na68fgiGU5jFqKz")
+                    .setSenderId("915642175672")
+                    .setMarketingCloudServerUrl("https://mclwqdnn3-6p1tr1vbytf1bdtmzy.device.marketingcloudapis.com")
+                    .setNotificationCustomizationOptions(NotificationCustomizationOptions.create(R.drawable.ic_notification))
+                    .setAnalyticsEnabled(true)
+                    .build(this),
+            initializationStatus -> Log.e("INIT", initializationStatus.toString()));
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
