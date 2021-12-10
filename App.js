@@ -107,9 +107,10 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   imagen: {
-    width: 400,
+    width: '100%',
     height: 400,
     resizeMode: 'cover',
+    backgroundColor: '#05141f',
   },
   imagenLogo: {
     width: 25,
